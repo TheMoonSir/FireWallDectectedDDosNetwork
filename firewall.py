@@ -53,6 +53,13 @@ cleanup = 300
 ListAllow = [""] ## Add your IP!! for won't block anytimes your ip
 last_cleanup = time.time()
 
+project_dir = os.path.dirname(os.path.abspath(__file__))
+
+if not os.getcwd() == project_dir:
+    print(f"You running the tool on - {os.getcwd()}, we are change the command to the project directory for not cause errors")
+    os.chdir(project_dir)
+    print("done")
+
 if not os.path.exists(log_file):
     with open(log_file, 'w') as f:
         print("FireWall Log was not install, now its does.")
